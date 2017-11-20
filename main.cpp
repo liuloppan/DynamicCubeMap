@@ -21,7 +21,7 @@ int main()
     WindowManager myWindow = WindowManager(window, SCR_WIDTH, SCR_HEIGHT);
 
    // int triangleShader = createShader(vertexShaderSource, fragmentShaderSource);
-    ShaderManager triangleShader = ShaderManager("triangle.vert", "","","","triangle.frag");
+    ShaderManager triangleShader = ShaderManager("shaders/triangle.vert", "","","","shaders/triangle.frag");
 
 
       // set up vertex data (and buffer(s)) and configure vertex attributes
@@ -87,8 +87,3 @@ int main()
   
 }
 
-/* HOT KEYS
-  ctrl + K + O -> Open folder (select folder with alt+O)
-  ctrl + A, ctrl + K + F -> Nice format
-  ctrl + D -> Mark several similair
-*/

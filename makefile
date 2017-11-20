@@ -4,9 +4,9 @@ CC = g++ -std=c++11
 INCLUDES = -Iinclude 
 LINKER_FLAGS = -lstdc++ -lXt -lm -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl -lXinerama -lXcursor -lGLEW
 CFLAGS = $(INCLUDES) $(LINKER_FLAGS)
-DEPS = #include/*
+DEPS = include/*
 
-INTERNAL_INCLUDES = $(NAME).cpp WindowManager.cpp ShaderManager.cpp #src/*
+INTERNAL_INCLUDES = $(NAME).cpp src/*
 EXTERNAL_INCLUDES = 
 
 all:  $(NAME)

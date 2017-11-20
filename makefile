@@ -6,7 +6,7 @@ LINKER_FLAGS = -lstdc++ -lXt -lm -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lp
 CFLAGS = $(INCLUDES) $(LINKER_FLAGS)
 DEPS = #include/*
 
-INTERNAL_INCLUDES = $(NAME).cpp #src/*
+INTERNAL_INCLUDES = $(NAME).cpp WindowManager.cpp ShaderManager.cpp #src/*
 EXTERNAL_INCLUDES = 
 
 all:  $(NAME)

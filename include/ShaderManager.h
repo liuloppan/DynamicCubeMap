@@ -17,11 +17,13 @@
 class ShaderManager {
 public:
 	/// Constructs a GLSL shader program with V/TC/TE/G/F-shaders located in the specified files
-	ShaderManager(std::string vertex_shader_filename = "",
-		std::string tessellation_control_shader_filename = "",
-		std::string tessellation_eval_shader_filename = "",
-		std::string geometry_shader_filename = "",
-		std::string fragment_shader_filename = "");
+	// ShaderManager(std::string vertex_shader_filename = "",
+	// 	std::string tessellation_control_shader_filename = "",
+	// 	std::string tessellation_eval_shader_filename = "",
+	// 	std::string geometry_shader_filename = "",
+	// 	std::string fragment_shader_filename = "");
+	
+	ShaderManager(std::string vertex_shader_filename = "", std::string fragment_shader_filename = "");
 
 	static const std::string ReadFromFile(std::string fileName);
 

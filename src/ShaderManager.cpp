@@ -24,25 +24,46 @@ const std::string ShaderManager::ReadFromFile(std::string fileName) {
 	return out;
 }
 
-ShaderManager::ShaderManager(std::string vertex_shader_filename, std::string tessellation_control_shader_filename,
-	std::string tessellation_eval_shader_filename, std::string geometry_shader_filename,
-	std::string fragment_shader_filename) {
+// ShaderManager::ShaderManager(std::string vertex_shader_filename, std::string tessellation_control_shader_filename,
+// 	std::string tessellation_eval_shader_filename, std::string geometry_shader_filename,
+// 	std::string fragment_shader_filename) {
 
+// 	if (vertex_shader_filename != "") {
+// 		auto v_source = ReadFromFile(vertex_shader_filename);
+// 		AttachShader(GL_VERTEX_SHADER, v_source);
+// 	}
+// 	if (tessellation_control_shader_filename != "") {
+// 		auto t_c_source = ReadFromFile(tessellation_control_shader_filename);
+// 		AttachShader(GL_TESS_CONTROL_SHADER, t_c_source);
+// 	}
+// 	if (tessellation_eval_shader_filename != "") {
+// 		auto t_e_source = ReadFromFile(tessellation_eval_shader_filename);
+// 		AttachShader(GL_TESS_EVALUATION_SHADER, t_e_source);
+// 	}
+// 	if (geometry_shader_filename != "") {
+// 		auto g_source = ReadFromFile(geometry_shader_filename);
+// 		AttachShader(GL_GEOMETRY_SHADER, g_source);
+// 	}
+// 	if (fragment_shader_filename != "") {
+// 		auto f_source = ReadFromFile(fragment_shader_filename);
+// 		AttachShader(GL_FRAGMENT_SHADER, f_source);
+// 	}
+
+// 	//Link shaders
+// 	ConfigureShaderManager();
+
+// 	//Detach shaders after successful linking
+// 	for (GLuint shader_program : shader_programs_) {
+// 		glDetachShader(prog, shader_program);
+// 	}
+// }
+
+//overloaded constructor
+ShaderManager::ShaderManager(std::string vertex_shader_filename,std::string fragment_shader_filename)
+{
 	if (vertex_shader_filename != "") {
 		auto v_source = ReadFromFile(vertex_shader_filename);
 		AttachShader(GL_VERTEX_SHADER, v_source);
-	}
-	if (tessellation_control_shader_filename != "") {
-		auto t_c_source = ReadFromFile(tessellation_control_shader_filename);
-		AttachShader(GL_TESS_CONTROL_SHADER, t_c_source);
-	}
-	if (tessellation_eval_shader_filename != "") {
-		auto t_e_source = ReadFromFile(tessellation_eval_shader_filename);
-		AttachShader(GL_TESS_EVALUATION_SHADER, t_e_source);
-	}
-	if (geometry_shader_filename != "") {
-		auto g_source = ReadFromFile(geometry_shader_filename);
-		AttachShader(GL_GEOMETRY_SHADER, g_source);
 	}
 	if (fragment_shader_filename != "") {
 		auto f_source = ReadFromFile(fragment_shader_filename);
@@ -56,7 +77,9 @@ ShaderManager::ShaderManager(std::string vertex_shader_filename, std::string tes
 	for (GLuint shader_program : shader_programs_) {
 		glDetachShader(prog, shader_program);
 	}
+
 }
+
 
 ShaderManager::~ShaderManager() {
 	for (GLuint shader_program : shader_programs_) {

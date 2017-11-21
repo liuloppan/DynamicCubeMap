@@ -5,12 +5,9 @@
 
 
 
-int createShader(const char *thisVertexShaderSource, const char *thisFragmentShaderSource);
-
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
-
 
 
 
@@ -18,10 +15,10 @@ int main()
 {
 
     GLFWwindow* window = nullptr;
-    WindowManager myWindow = WindowManager(window, SCR_WIDTH, SCR_HEIGHT);
+    WindowManager windowManager = WindowManager(window, SCR_WIDTH, SCR_HEIGHT);
 
    // int triangleShader = createShader(vertexShaderSource, fragmentShaderSource);
-    ShaderManager triangleShader = ShaderManager("shaders/triangle.vert", "","","","shaders/triangle.frag");
+    ShaderManager triangleShader = ShaderManager("shaders/triangle.vert", "shaders/triangle.frag");
 
 
       // set up vertex data (and buffer(s)) and configure vertex attributes
@@ -60,7 +57,7 @@ int main()
         // input
         // -----
         //processInput(window);
-        myWindow.processInput(window);
+        windowManager.processInput(window);
 
         // render
         // ------

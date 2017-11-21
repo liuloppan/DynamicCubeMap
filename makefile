@@ -2,7 +2,7 @@
 NAME = main
 CC = g++ -std=c++11
 INCLUDES = -Iinclude 
-LINKER_FLAGS = -lstdc++ -lXt -lm -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl -lXinerama -lXcursor -lGLEW
+LINKER_FLAGS = -lstdc++ -lXt -lm -lSOIL -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl -lXinerama -lXcursor -lGLEW
 CFLAGS = $(INCLUDES) $(LINKER_FLAGS)
 DEPS = include/*
 
@@ -26,6 +26,11 @@ lovisa:
 	cmatrix
 
 run: 
-	./$(NAME)
+	./$(NAME) 
 
+albin:
+	espeak -vsv "Albin, plugga hårt!"
+
+mamma: 
+	espeak "Yo mamma is so fat she doesn't need the internet, because she's already world wide." -s 50
 
